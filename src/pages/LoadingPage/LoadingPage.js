@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { LoadingPageContainer, CustomSkeleton } from './loadingPage.style'
+import { LoadingPageContainer } from './loadingPage.style'
+import Skeleton from '@mui/material/Skeleton';
 
 const SKELETON_NUMBER = 10
-
 
 const LoadingPage = () => {
   const getSkeletons = () => {
   let skeletons = []
   for(let i = 0; i < SKELETON_NUMBER; i++) {
-    skeletons.push(<CustomSkeleton key={i} height={40}/>) 
+    skeletons.push(<Skeleton key={i} height={40}/>) 
   }
   return skeletons
 }
