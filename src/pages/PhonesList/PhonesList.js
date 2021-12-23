@@ -20,7 +20,7 @@ const PhonesList = () => {
     {!isFetching && phones.length && (
       <CardsListContainer>
         {phones.map(phone => (
-          <PhoneCard data={phone} key={phone.id}></PhoneCard>
+          <PhoneCard data={phone} key={phone._id}></PhoneCard>
         ))}
       </CardsListContainer>
     )}

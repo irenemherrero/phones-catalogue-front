@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const imageDir = process.env.REACT_APP_IMAGES_DIR
 
-const PhoneCard = ({ data: { description, color, imageFileName, manufacturer, name, price, processor, ram, screen, id } }) => {
+const PhoneCard = ({ data: { description, color, imageFileName, manufacturer, name, price, processor, ram, screen, _id } }) => {
   return (
-    <Link to={`/phones/${id}`}>
+    <Link to={`/phones/${_id}`}>
       <CustomCard variant="outlined">
         <CardContent>
           <CustomImage src={`${imageDir}/${imageFileName}`} alt={name} />
