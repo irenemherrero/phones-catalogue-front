@@ -1,8 +1,10 @@
 import axios from 'axios'
 
-const url = process.env.REACT_APP_PHONES_API_URL
+const phonesUrl = process.env.REACT_APP_PHONES_API_URL
 
-const fetchPhones = () => {
+const fetchPhones = id => {
+  let url = phonesUrl
+  if (id) url = `${phonesUrl}/${id}`
   return axios.get(url)
 }
 

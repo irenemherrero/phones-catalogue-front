@@ -2,12 +2,15 @@ import {
   REQUEST_PHONES,
   RECEIVE_PHONES,
   ERROR_FETCHING,
+  REQUEST_PHONE,
+  RECEIVE_PHONE,
 } from './constants'
 
 const initialState = {
   isFetching: false,
   phones: [],
   error: null,
+  phone: null,
 }
 
 const phonesReducer = (state = initialState, action) => {
@@ -28,6 +31,17 @@ const phonesReducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         error: action.error,
+      }
+    case REQUEST_PHONE:
+      return {
+        ...state,
+        isFetching: true,
+      }
+    case RECEIVE_PHONE:
+      return {
+        ...state,
+        isFetching: false,
+        phone: action.phone,
       }
     default:
       return state
